@@ -23,15 +23,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('home.urls')),
     path('registroPaquetes/', include('registroPaquetes.urls')),
+    path('login/', include('login.urls')),
 ]
-
-"""
-path('admin/', admin.site.urls),
-    path('', include('home.urls')),
-    path('genPassword/', include('genPassword.urls')),
-    path('cesar/', include('cesar.urls')),
-    path('transposicion/', include('transposicion.urls')),
-    path('portada/', include('portada.urls')),
-
-
-"""

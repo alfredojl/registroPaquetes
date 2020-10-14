@@ -91,7 +91,12 @@
 </script>
 {% if status %}
     <script>
-        var 
+        saveChanges(true);
+    </script>
+{% endif %}
+{% if !status %}
+    <script>
+        saveChanges(false);
     </script>
 {% endif %}
 {% endblock %}

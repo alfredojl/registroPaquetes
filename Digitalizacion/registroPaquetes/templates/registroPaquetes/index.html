@@ -1,0 +1,97 @@
+{% extends "home/base.html" %}
+
+{% block title %}
+  Digitalizacion
+{% endblock %}
+
+
+{% block content %}
+<br>
+<br>
+<br>
+<div class="container justify-content-md-center
+    <div class="card justify-content-md-center" style="width: 20rem;">
+        <div class="card-body">
+          <h5 class="card-title">Registro de Paquetes</h5>
+          <form action="{% url 'verificaDatos' %}" id="formu" method="post">{% csrf_token %}
+          <div class="row justify-content-md-center">
+            <div class="input-group input-group-sm m-2">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" >Paquete</span>
+                </div>
+                <input type="number" class="form-control" aria-label="Sizing example input" id="paquete" name="paquete" aria-describedby="inputGroup-sizing-sm" required>
+                {% if errorPaquete %}
+                <p class="alert alert-warning">Revisa este campo.</p>
+                {% endif %}
+            </div>
+            <div class="input-group input-group-sm m-2">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" >Fecha</span>
+                </div>
+                <input type="date" class="form-control" aria-label="Sizing example input" aria-placeholder="dd/mm/aaaa" id="fecha" name="fecha" aria-describedby="inputGroup-sizing-sm" required>
+                {% if errorDate %}
+                <p class="alert alert-warning">Revisa este campo.</p>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="row justify-content-md-center ">
+            <div class="input-group input-group-sm m-2 ">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" >Folio Inicio</span>
+                </div>
+                <input type="number" class="form-control" aria-label="Sizing example input" id="foInicio" name="foInicio" aria-describedby="inputGroup-sizing-sm" required>
+                {% if errorInicio %}
+                <p class="alert alert-warning">Revisa este campo.</p>
+                {% endif %}
+            </div>
+            <div class="input-group input-group-sm m-2">
+                <div class="input-group-prepend">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" >Folio Fin</span>
+                </div>
+                <input type="number" class="form-control" aria-label="Sizing example input" id="foFin" name="foFin" aria-describedby="inputGroup-sizing-sm" required>
+                {% if errorFin %}
+                <p class="alert alert-warning">Revisa este campo.</p>
+                {% endif %}
+            </div>
+        </div>
+        
+        <br>
+        <button type="reset" class="btn btn-danger btn-sm">Limpiar Campos</button>
+        &nbsp;&nbsp;
+        <button type="submit" class="btn btn-success btn-sm">Registrar</button>
+          </form>
+
+        </div>
+      </div>
+</div>
+
+<script>
+    const Swal = require('sweetalert2');
+    saveChanges(status){
+        if (status){
+        Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Your work has been saved',
+        showConfirmButton: false,
+        timer: 1500
+        });
+    }else{
+        Swal.fire({
+        position: 'top-end',
+        icon: 'error',
+        title: 'Your work has been saved',
+        showConfirmButton: false,
+        timer: 1500
+        });
+    }
+    }
+</script>
+{% if status %}
+    <script>
+        var 
+    </script>
+{% endif %}
+{% endblock %}

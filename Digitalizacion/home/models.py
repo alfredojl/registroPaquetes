@@ -16,7 +16,7 @@ class Estado(models.Model):
 
 class Folio(models.Model):
     Folio = models.IntegerField(primary_key=True)
-    tomos = models.CharField(max_length=100)
+    tomos = models.CharField(max_length=100, blank=True, null=True)
     oficios = models.CharField(max_length=10)
     referencia = models.CharField(max_length=10)
     idEstado = models.ForeignKey(Estado, on_delete=models.CASCADE)
@@ -30,12 +30,12 @@ class Paquete(models.Model):
     folioInicio = models.IntegerField()
     folioFin = models.IntegerField()
     fechaExp = models.DateField()
-    noFojas = models.IntegerField()
-    recepcion = models.IntegerField()
-    validacion = models.IntegerField()
-    sellado = models.IntegerField()
-    cosido = models.IntegerField()
-    fechaRealizado = models.DateField
+    noFojas = models.IntegerField(blank=True, null=True)
+    recepcion = models.IntegerField(blank=True, null=True)
+    validacion = models.IntegerField(blank=True, null=True)
+    sellado = models.IntegerField(blank=True, null=True)
+    cosido = models.IntegerField(blank=True, null=True)
+    fechaRealizado = models.DateField(blank=True, null=True)
 
 class Usuario(models.Model):
     idUsuario = models.AutoField(primary_key=True)

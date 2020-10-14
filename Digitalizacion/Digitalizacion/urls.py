@@ -18,10 +18,12 @@ from django.urls import path, include
 
 from django.conf.urls import url
 from django.views.generic import TemplateView
+from Digitalizacion import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('home.urls')),
+    path('verificacion', views.verificacion)
 ]
 
 """

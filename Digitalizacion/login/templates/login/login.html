@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>
+        {% block title %} {% endblock %}
+    </title>
+
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'home/css/bootstrap.css' %}"> {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'home/css/estilos.css' %}"> {% block css %} {% endblock %}
+
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="input-group mb-3 col-12 col-sm-9 col-md-8 col-lg-5 my-4 mx-auto">
+            <div class="input-group-prepend px-auto gp-inp">
+                <span class="input-group-text icon-login-form pl-3 pr-0">
+            <font-awesome-icon icon="user" class="user-icon-input" />
+        </span>
+            </div>
+            <input type="email" submit="POST" class="form-control input-login-form shadow-none py-4" placeholder="Usuario" />
+        </div>
+
+        {% load static %}
+        <script src="{% static 'home/js/jquery.min.js' %}" charset="utf-8"></script>
+        </script>
+        {% load static %}
+        <script src="{% static 'home/js/bootstrap.min.js' %}" charset="utf-8"></script>
+        </script>
+        {% load static %}
+        <script src="{% static 'home/js/myjs.js' %}" charset="utf-8"></script>
+        </script>
+        {% block js %} {% endblock %}
+
+</body>
+
+</html>
